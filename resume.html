@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NAGA MAHENDRA SANNAMURI — Resume</title>
+  <meta name="description" content="Professional resume of Naga Mahendra Sannamuri" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f7f9fc;
+      --text:#0f1724;
+      --muted:#475569;
+      --accent:#0ea5a4;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+
+      /* fonts */
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-serif: 'EB Garamond', Georgia, serif;
+      --font-mono: 'Roboto Mono', monospace;
+      --font-italic: 'Playfair Display', italic;
+      --font-cursive: 'Comic Sans MS', cursive, sans-serif;
+      --font-condensed: 'Arial Narrow', Arial, sans-serif;
+    }
+
+    :root[data-theme='dark']{
+      --bg:#071129;
+      --card:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      --text:#e6eef6;
+      --muted:#98a6b8;
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font-sans); /* default */
+      padding:28px;
+      transition:background .25s ease, color .25s ease;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:0 auto;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+      backdrop-filter: blur(6px);
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+    }
+
+    header.topbar{
+      grid-column:1/-1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    button.btn{
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,0.06);
+      background:white;
+      cursor:pointer;
+      font-weight:600;
+      transition:all .2s;
+    }
+    [data-theme='dark'] .btn{background:white;color:black}
+    button.btn:hover{transform:translateY(-1px);background:var(--accent);color:#fff}
+
+    .swatches{display:flex;gap:8px}
+    .swatch{width:32px;height:32px;border-radius:50%;cursor:pointer;border:2px solid rgba(0,0,0,0.06)}
+    .swatch:hover{transform:scale(1.1);border:2px solid var(--accent)}
+
+    .profile{padding:18px;display:flex;flex-direction:column;align-items:center}
+    .avatar{width:160px;height:160px;border-radius:50%;overflow:hidden;border:6px solid var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:32px;margin-bottom:16px;color:var(--bg)}
+
+    .main{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+    h2{margin:0;font-size:18px;color:var(--accent)}
+    h3{margin:0;font-size:15px;color:var(--accent)}
+
+    .section{padding:12px 0;border-bottom:1px dashed rgba(0,0,0,0.05)}
+    .section:last-child{border-bottom:0}
+    .summary p{margin:8px 0;color:var(--muted);line-height:1.5}
+
+    .two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+    .skill{padding:6px 8px;border-radius:8px;font-weight:600;border:1px dashed rgba(0,0,0,0.05);font-size:13px;color:var(--muted)}
+
+    .project{margin:8px 0}
+    .project .meta{font-size:13px;color:var(--muted);margin-top:4px}
+
+    .education .row{display:flex;justify-content:space-between;gap:8px}
+
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr; padding:18px}
+      .profile{flex-direction:column;padding:12px}
+      .avatar{width:120px;height:120px}
+    }
+
+    .muted{color:var(--muted)}
+    a.simple{color:var(--accent);text-decoration:none;font-weight:700}
+    .footer{grid-column:1/-1;text-align:center;padding-top:10px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container" id="site">
+    <header class="topbar">
+      <div>
+        <div style="font-weight:800;font-size:18px">NAGA MAHENDRA SANNAMURI</div>
+        <div style="color:var(--muted);font-size:13px">Aspiring Computer Engineer — Web & Database Enthusiast</div>
+      </div>
+
+      <div class="controls">
+        <label for="fontSelect" class="muted" style="font-size:13px">Font</label>
+        <select id="fontSelect" style="padding:8px;border-radius:10px">
+          <option value="sans">Sans</option>
+          <option value="serif">Serif</option>
+          <option value="mono">Mono</option>
+          <option value="italic">Italic</option>
+          <option value="cursive">Cursive</option>
+          <option value="condensed">Condensed</option>
+        </select>
+
+        <button id="themeToggle" class="btn"> Dark</button>
+
+        <div class="swatches">
+          <button class="swatch" data-color="#0ea5a4" style="background:#0ea5a4"></button>
+          <button class="swatch" data-color="#60a5fa" style="background:#60a5fa"></button>
+          <button class="swatch" data-color="#f97316" style="background:#f97316"></button>
+          <button class="swatch" data-color="#d946ef" style="background:#d946ef"></button>
+          <button class="swatch" data-color="#22c55e" style="background:#22c55e"></button>
+          <button class="swatch" data-color="#ef4444" style="background:#ef4444"></button>
+        </div>
+
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section summary">
+        <h2>Career Objective</h2>
+        <p>Aspiring to work for a reputed organisation where I can showcase my knowledge and skills that will benefit the organization in the long run and evolve continuously through learning and improve my professional career.</p>
+      </section>
+
+      <section class="section">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <h2>Education</h2>
+          <div class="muted">(2018 - 2022)</div>
+        </div>
+        <div class="education">
+          <div class="row">
+            <div>
+              <strong>Bachelor of Science in Computer Engineering</strong>
+              <div class="muted">ISBAT University, Kampala, Uganda</div>
+            </div>
+            <div style="text-align:right">
+              <div class="muted">Percentage</div>
+              <div style="font-weight:800">80.34%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Technical Skills</h2>
+        <div class="two-col">
+          <div class="skill">Python/ C / C++</div>
+          <div class="skill">Object Oriented Concepts (Java)</div>
+          <div class="skill">SQL Database</div>
+          <div class="skill">WordPress</div>
+          <div class="skill">WooCommerce</div>
+          <div class="skill">Figma</div>
+          <div class="skill">PHP</div>
+          <div class="skill">HTML / CSS / Bootstrap / Flexbox</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">React.js</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">Next.js</div>
+          <div class="skill">Windows / Linux</div>
+          <div class="skill">MS Office</div>
+          
+          <div class="skill">Git</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Professional experience:  </h2>
+        <section class="section summary">
+        <p><b>Web Developer | SIMBA Company | Kampala, Uganda</b><br>
+        <span class="muted">January 2023 – Present</span></p>
+        <ul>
+          <li>Led the end-to-end development of dynamic and responsive websites, utilizing WordPress, WooCommerce, HTML, CSS, JavaScript, Node.js, Next.js, and React.js to deliver high-quality web solutions.</li>
+  <li>Spearheaded the creation and maintenance of websites such as The Simba Group, PinkHouseSpices, WhiteNileConsult, HerWorkingWomen, and several others, ensuring they were user-friendly, visually appealing, and optimized for performance.</li>
+  <li>Proficiently managed the development of interactive and responsive front-end interfaces, improving the user experience with modern design practices and technologies.</li>
+  <li>Advanced skills in React.js to enhance the interactivity and functionality of web applications, contributing to a seamless and engaging user experience.</li>
+  <li>Demonstrated a strong understanding of WordPress development, customizing themes and plugins to meet client needs while ensuring scalability and efficiency.</li>
+  <li>Troubleshot and resolved technical issues efficiently, ensuring the consistent functionality and performance of websites.</li>
+  <li>Collaborated effectively within cross-functional teams, ensuring clear communication and timely delivery of projects while adhering to deadlines and project goals.</li>
+  <li>Continuously stayed updated on emerging web technologies and industry best practices, implementing them to optimize website performance and user satisfaction.</li>        </ul
+      </section>
+         
+        <h2>Projects</h2>
+        <div class="project"><strong>Tourism Website</strong> 
+          <div class="meta">Static site showcasing destinations. HTML, CSS, Bootstrap.</div>
+        </div>
+        <div class="project"><strong>Food Munch Website</strong> 
+          <div class="meta">Responsive site for restaurant menus. HTML, CSS, Bootstrap.</div>
+        </div>
+        <div class="project"><strong>Mathematical  Game Website</strong> 
+          <div class="meta">Dynamic app for practicing high level maths. HTML, CSS, JS.</div>
+        </div>
+        <div class="project"><strong>Library Website</strong> 
+          <div class="meta">Dynamic app to access books. HTML, CSS, JS.</div>
+        </div>
+        <div class="project"><strong>SQL Database Project</strong> 
+          <div class="meta">Analyzed a large dataset using SQL: users, channels, videos, likes.</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Certifications & Achievements</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+          <div class="skill">Java</div>
+          <div class="skill">Static Website</div>
+          <div class="skill">Responsive Website</div>
+          <div class="skill">Dynamic Web Application</div>
+          <div class="skill">Python</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">SQL</div>
+          <div class="skill">Flexbox</div>
+          <div class="skill">Developer Foundations</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Languages</h2>
+        <p class="muted">Telugu, English</p>
+      </section>
+
+      <section class="section">
+        <h2>Declaration</h2>
+        <p class="muted">I hereby declare that the above mentioned information is true to my knowledge and the proofs of certification will be provided on request.</p>
+      </section>
+<section class="section">
+        <h2>References: </h2>
+        <p>Name: Edgar Tinkamanyire </p>
+        <p>Role: senior full stack developer  </p>
+        <p>Email: edgar.tinkamanyire@simbatelecom.com</p>
+      </section>
+    </main>
+
+
+
+    <aside class="profile">
+      <div class="avatar" id="avatar">
+<img src="D:\resume\resumefinal\Mahendra Photo.jpg" alt="" width="160" height="150">
+</div>
+      <div style="text-align:center;width:100%">
+        <div class="name">NAGA MAHENDRA SANNAMURI</div>
+        <div class="role">B.Sc. Computer Engineering</div>
+        <div class="contact">
+          <p><strong>Address:</strong><br>Flat No:402, Sai Geetha Residency, 1st Line, SVN Colony, Guntur, Andhra Pradesh</p>
+          <p><strong>Phone:</strong> +91 63094 00239<br>
+          <strong>Email:</strong> <a class="simple" href="mailto:snagamahindra@gmail.com">snagamahindra@gmail.com</a></p>
+          <strong>Linkdin:</strong> <a class="simple" href="www.linkedin.com/in/mahendra2001">www.linkedin.com</a></p>
+
+        </div>
+      </div>
+    </aside>
+
+    <div class="footer"></code> • Responsive & themeable</div>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const fontSelect = document.getElementById('fontSelect');
+    const themeToggle = document.getElementById('themeToggle');
+    const swatches = document.querySelectorAll('.swatch');
+    const resetBtn = document.getElementById('resetBtn');
+
+    const prefs = JSON.parse(localStorage.getItem('resume_prefs') || '{}');
+    if(prefs.theme === 'dark'){ root.setAttribute('data-theme','dark'); themeToggle.textContent = 'Light'; }
+    if(prefs.color){ root.style.setProperty('--accent', prefs.color); }
+    if(prefs.font){ fontSelect.value = prefs.font; applyFont(prefs.font); }
+
+    fontSelect.addEventListener('change', e => { applyFont(e.target.value); save(); });
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if(isDark){ root.removeAttribute('data-theme'); themeToggle.textContent = 'Dark'; }
+      else { root.setAttribute('data-theme','dark'); themeToggle.textContent = 'Light'; }
+      save();
+    });
+
+    swatches.forEach(s=>s.addEventListener('click', ev=>{
+      const c = ev.currentTarget.dataset.color;
+      root.style.setProperty('--accent', c);
+      document.getElementById('avatar').style.borderColor = c;
+      save();
+    }));
+
+    resetBtn.addEventListener('click', ()=>{
+      localStorage.removeItem('resume_prefs');
+      root.removeAttribute('data-theme');
+      root.style.removeProperty('--accent');
+      fontSelect.value = 'sans';
+      applyFont('sans');
+      themeToggle.textContent = 'Dark';
+    });
+
+    function applyFont(key){
+      const fonts = {
+        sans:"var(--font-sans)",
+        serif:"var(--font-serif)",
+        mono:"var(--font-mono)",
+        italic:"var(--font-italic)",
+        cursive:"var(--font-cursive)",
+        condensed:"var(--font-condensed)"
+      };
+      document.body.style.fontFamily = fonts[key] || fonts.sans;
+    }
+
+    function save(){
+      const theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const color = getComputedStyle(root).getPropertyValue('--accent').trim();
+      const font = fontSelect.value;
+      localStorage.setItem('resume_prefs', JSON.stringify({theme,color,font}));
+    }
+
+    // replace avatar with profile.jpg if exists
+    (function(){
+      const img = new Image();
+      img.src = 'profile.jpg';
+      img.onload = ()=>{
+        const avatar = document.getElementById('avatar');
+        avatar.innerHTML = '';
+        img.style.width='100%'; img.style.height='100%'; img.style.objectFit='cover';
+        avatar.appendChild(img);
+      }
+    })();
+  </script>
+</body>
+</html>
