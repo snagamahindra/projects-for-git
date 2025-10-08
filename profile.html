@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Card with Gradient Effect</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .profile-card {
+      width: 320px;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Gradient background */
+      border: 3px solid transparent; 
+      border-radius: 20px;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #4a90e2;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .profile-card h2 {
+      margin: 15px 0 5px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .profile-card .buttons {
+      margin: 20px 0;
+    }
+
+    .profile-card button {
+      padding: 10px 18px;
+      margin: 5px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #4a90e2, #0072ff);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .profile-card button:hover {
+      background: linear-gradient(135deg, #0072ff, #4a90e2);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <img src="D:\resume\resumefinal\Mahendra Photo.jpg" alt="Profile Picture">
+    <h2>Mahendra</h2>
+    <p>Web Developer | UI Designer</p>
+    <div class="buttons">
+      <button>Follow</button>
+      <button>Message</button>
+    </div>
+  </div>
+</body>
+</html>

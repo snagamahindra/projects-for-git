@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2x2 Frame Layout</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 50% 50%;  /* two rows */
+      grid-template-columns: 50% 50%; /* two columns */
+      font-family: Arial, sans-serif;
+    }
+
+    .frame {
+      border: 2px solid #333;
+      padding: 10px;
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .scroll-images {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .scroll-images img {
+      width: 120px;
+      height: 80px;
+      border-radius: 6px;
+    }
+
+    .buttons img {
+      width: 100px;
+      height: 70px;
+      margin: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .buttons img:hover {
+      border: 2px solid blue;
+    }
+
+    .display-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .display-frame img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Frame 1: Table -->
+  <div class="frame">
+    <h3>Student Details</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Course</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Mahindra</td>
+        <td>Web Development</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Sannamuri</td>
+        <td>Data Science</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ramesh</td>
+        <td>AI & ML</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Frame 2: Scrollable Images -->
+  <div class="frame">
+    <h3>Scrollable Images</h3>
+    <div class="scroll-images">
+      <img src="C:/Users/snaga/OneDrive/Pictures/b27af5a8f3d96a672d0bb992a4604762.jpg" alt="Image1">
+      <img src="C:/Users/snaga/OneDrive/Pictures/b50aef7a9723c9195ace500b587152f2.jpg" alt="Image2">
+      <img src="C:/Users/snaga/OneDrive/Pictures/god-lord-vishnu-wallpaper-preview.jpg" alt="Image3">
+      <img src="C:/Users/snaga/OneDrive/Pictures/gojo.jpg" alt="Image4">
+      <img src="C:/Users/snaga/OneDrive/Pictures/download.jpg" alt="Image5">
+    </div>
+  </div>
+
+  <!-- Frame 3: Image Buttons -->
+  <div class="frame buttons">
+    <h3>Click an Image Button</h3>
+    <img src="C:/Users/snaga/OneDrive/Pictures/b27af5a8f3d96a672d0bb992a4604762.jpg" onclick="showImage(this.src)" alt="btn1">
+    <img src="C:/Users/snaga/OneDrive/Pictures/b50aef7a9723c9195ace500b587152f2.jpg" onclick="showImage(this.src)" alt="btn2">
+    <img src="C:/Users/snaga/OneDrive/Pictures/god-lord-vishnu-wallpaper-preview.jpg" onclick="showImage(this.src)" alt="btn3">
+    <img src="C:/Users/snaga/OneDrive/Pictures/gojo.jpg" onclick="showImage(this.src)" alt="btn4">
+  </div>
+
+  <!-- Frame 4: Display Selected Image -->
+  <div class="frame display-frame" id="displayFrame">
+    <h3>Select an image from above buttons</h3>
+  </div>
+
+  <script>
+    function showImage(src) {
+      document.getElementById("displayFrame").innerHTML =
+        '<img src="' + src + '" alt="Selected">';
+    }
+  </script>
+</body>
+</html>
